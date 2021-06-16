@@ -387,7 +387,8 @@ if ( ! class_exists( 'CAWeb_Nav_Menu' ) ) {
 				}
 
 				/* Get desc if present */
-				$desc = ! empty( $item->description ) ? sprintf( '<div class="link-description">%1$s</div>', $item->description ) : '&nbsp;';
+				$desc = ! empty( $item->description ) ? $item->description : '&nbsp;';
+				$desc = 'unit3' !== $unit_size ? sprintf( '<div class="link-description">%1$s</div>', $desc ) : $desc;
 
 				if ( 'flexmega' === $args->style ) {
 					/* Get nav media if present */
@@ -436,7 +437,7 @@ if ( ! class_exists( 'CAWeb_Nav_Menu' ) ) {
 
 					/* Create Link */
 					$link = sprintf(
-						'<a href="%1$s" class="second-level-link"%2$s>%3$s%4$s</a>',
+						'<a href="%1$s" class="second-level-link"%2$s tabindex="-1">%3$s%4$s</a>',
 						$item->url,
 						( ! empty( $item->target ) ? sprintf( ' target="%1$s"', $item->target ) : '' ),
 						$media,
@@ -465,7 +466,7 @@ if ( ! class_exists( 'CAWeb_Nav_Menu' ) ) {
 					if ( 'unit3' !== $unit_size ) {
 						/* Create Link */
 						$link = sprintf(
-							'<a href="%1$s" class="second-level-link"%2$s>%3$s%4$s%5$s</a>',
+							'<a href="%1$s" class="second-level-link"%2$s tabindex="-1">%3$s%4$s%5$s</a>',
 							$item->url,
 							( ! empty( $item->target ) ? sprintf( ' target="%1$s"', $item->target ) : '' ),
 							$icon,
@@ -488,7 +489,7 @@ if ( ! class_exists( 'CAWeb_Nav_Menu' ) ) {
 
 						$nav_media = 'megadropdown' === $args->style ?
 							sprintf(
-								'<div class="media-left"><a href="%1$s"><img style="height: 77px; max-width: 77px;" src="%2$s" alt="%3$s"/></a></div>',
+								'<div class="media-left"><a class="second-level-link" href="%1$s" tabindex="-1"><img style="height: 77px; max-width: 77px;" src="%2$s" alt="%3$s"/></a></div>',
 								$item->url,
 								$nav_media_image,
 								$nav_media_alt_text
@@ -496,7 +497,7 @@ if ( ! class_exists( 'CAWeb_Nav_Menu' ) ) {
 
 						$sub_nav .= sprintf(
 							'<li %1$s title="%2$s" %3$s><div class="nav-media">
-								<div class="media">%4$s<div class="media-body"><div class="title"><a href="%5$s"%6$s>%7$s</a></div>
+								<div class="media">%4$s<div class="media-body"><div class="title"><a class="second-level-link" href="%5$s"%6$s tabindex="-1">%7$s</a></div>
 								<div class="teaser">%8$s</div></div></div></div></li>',
 							sprintf( ' class="%1$s %2$s" ', $unit_size, implode( ' ', $item->classes ) ),
 							$item->attr_title,

@@ -1,4 +1,5 @@
 CAWeb v1.5.5
+- Added missing tabindex attribute to second level links
 - Enforced WPCS on inc/functions.php
 - Added new transformation to phpDoc template
 - Added additional comments to files
