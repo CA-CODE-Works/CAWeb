@@ -2,9 +2,7 @@
     "name": "cawebpublishing/caweb",
     "description": "Packages to help enforce WordPress Coding Standards",
     "require-dev": {
-        "phpdocumentor/phpdocumentor": "^3.0",
-        "twig/extra-bundle": "^3.3",
-        "twig/html-extra": "^3.3"
+        "phpdocumentor/phpdocumentor": "^3.0"
     },
     "scripts": {
         "post-install-cmd": [

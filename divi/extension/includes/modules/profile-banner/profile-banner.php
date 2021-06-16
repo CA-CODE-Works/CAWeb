@@ -2,7 +2,7 @@
 /**
  * CAWeb Profile Banner Module (Standard)
  *
- * @package CAWeb Module Extension
+ * @package CAWebModuleExtension
  */
 
 if ( ! class_exists( 'ET_Builder_CAWeb_Module' ) ) {
@@ -86,6 +86,7 @@ class CAWeb_Module_Profile_Banner extends ET_Builder_CAWeb_Module {
 				'description'     => esc_html__( 'Input the text for the profile link.', 'et_builder' ),
 				'tab_slug'        => 'general',
 				'toggle_slug'     => 'body',
+				'default'         => 'Profile Link',
 			),
 			'url' => array(
 				'label'           => esc_html__( 'Profile URL', 'et_builder' ),

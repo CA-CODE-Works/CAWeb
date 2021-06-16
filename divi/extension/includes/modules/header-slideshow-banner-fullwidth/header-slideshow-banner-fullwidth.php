@@ -97,7 +97,6 @@ class CAWeb_Module_Fullwidth_Header_Slideshow_Banner extends ET_Builder_CAWeb_Mo
 
 		return array_merge( $general_fields, $design_fields, $advanced_fields );
 	}
-
 	/**
 	 * Renders the Module on the frontend
 	 *
@@ -144,7 +143,7 @@ class CAWeb_Module_Fullwidth_Header_Slideshow_Banner extends ET_Builder_CAWeb_Mo
 
 		global $post;
 
-		if ( null === $post || (isset( $_GET['et_fb'] ) && '1' === $_GET['et_fb'] ) ) {
+		if ( null === $post || ( isset( $_GET['et_fb'] ) && '1' === $_GET['et_fb'] ) ) {
 			return;
 		}
 
@@ -167,22 +166,21 @@ class CAWeb_Module_Fullwidth_Header_Slideshow_Banner extends ET_Builder_CAWeb_Mo
 					var banner = section.find('#et_pb_ca_fullwidth_banner');
 
 					$(document).ready(function () {
-						$('#header').after(banner);
-						
+						$('#main-content').prepend(banner);
+
 						if( ! section.children().length )
 							$(section).remove();
-						
-						// calculate top of screen on next repaint
+
+							// calculate top of screen on next repaint
 						window.setTimeout(function () {
 							// fill up the remaining heaight of this device
-							if( 'auto' !== '<?php print_r( $this->props['height'] ) ?>' )
-								banner.css({ 'height': '<?php print_r( $this->props['height'] ) ?>' });
-							if( 'auto' !== '<?php print_r( $this->props['min_height'] ) ?>' )
-								banner.css({ 'min-height': '<?php print_r( $this->props['min_height'] ) ?>' });
-							if( 'none' !== '<?php print_r( $this->props['max_height'] ) ?>' )
-								banner.css({ 'max-height': '<?php print_r( $this->props['max_height'] ) ?>' });
+							if( 'auto' !== '<?php print esc_attr( $this->props['height'] ); ?>' )
+								banner.css({ 'height': '<?php print esc_attr( $this->props['height'] ); ?>' });
+							if( 'auto' !== '<?php print esc_attr( $this->props['min_height'] ); ?>' )
+								banner.css({ 'min-height': '<?php print esc_attr( $this->props['min_height'] ); ?>' });
+							if( 'none' !== '<?php print esc_attr( $this->props['max_height'] ); ?>' )
+								banner.css({ 'max-height': '<?php print esc_attr( $this->props['max_height'] ); ?>' });
 						}, 250);
-						
 					});
 
 				})(jQuery);				
@@ -190,7 +188,7 @@ class CAWeb_Module_Fullwidth_Header_Slideshow_Banner extends ET_Builder_CAWeb_Mo
 			<?php
 		endif;
 	}
+
 }
 new CAWeb_Module_Fullwidth_Header_Slideshow_Banner();
-
 ?>

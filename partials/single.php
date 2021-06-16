@@ -1,4 +1,4 @@
-<?php require_once( 'header.php' ); ?>
+<?php require_once 'header.php'; ?>
 
 	<div id="page-container">
 		<div id="et-main-area">

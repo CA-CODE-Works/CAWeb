@@ -7,3 +7,12 @@
 fieldset.field-move,.menu-settings-group.auto-add-pages{
     display: none !important;
 }
+
+/* This will hide the flexmega-row option for the first nested menu item */
+.menu-item-depth-0 + .menu-item-depth-1 .flexmega-row {
+    display: none;
+}
+/* This will unhide the flexmega-border option for the first nested menu item */
+.menu-item-depth-0 + .menu-item-depth-1 .flexmega-border {
+    display: inherit;
+}

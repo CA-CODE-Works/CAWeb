@@ -7,7 +7,8 @@ jQuery(document).ready(function() {
 	if( google_calendar_elements.length ){
 		google_calendar_elements.each(function(index, element) {
 			stripeIframeAttributes(element);
-			$(element).attr('title', 'Google Calendar Embed');
+			title = google_calendar_elements.length > 1 ? 'Google Calendar Embed ' + ( index + 1): 'Google Calendar Embed';
+			$(element).attr('title', title);
 		});
 	}
 });

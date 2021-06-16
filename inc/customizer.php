@@ -21,12 +21,12 @@ add_action( 'customize_register', 'caweb_customize_register' );
  */
 function caweb_customize_preview_init() {
 	wp_register_script( 'caweb-customizer-script', caweb_get_min_file( '/js/theme-customizer.js', 'js' ), array( 'jquery', 'customize-preview' ), CAWEB_VERSION, true );
-	
+
 	wp_localize_script(
 		'caweb-customizer-script',
 		'caweb_admin_args',
 		array(
-			'caweb_alert_count' => count( get_option( 'caweb_alerts', array() ) )
+			'caweb_alert_count' => count( get_option( 'caweb_alerts', array() ) ),
 		)
 	);
 
@@ -45,7 +45,7 @@ function caweb_customize_preview_init() {
  */
 function caweb_customize_controls_enqueue_scripts() {
 
-	$bootstrap_css = caweb_get_min_file( '/css/bootstrap.css' );
+	$bootstrap_css  = caweb_get_min_file( '/css/bootstrap.css' );
 	$customizer_css = caweb_get_min_file( '/css/theme-customizer.css' );
 
 	wp_enqueue_style( 'caweb-bootstrap-styles', $bootstrap_css, array(), CAWEB_VERSION );
@@ -53,17 +53,17 @@ function caweb_customize_controls_enqueue_scripts() {
 	wp_enqueue_style( 'caweb-customizer-styles', $customizer_css, array(), CAWEB_VERSION );
 
 	wp_register_script( 'caweb-customizer-controls-script', caweb_get_min_file( '/js/theme-customizer-controls.js', 'js' ), array(), CAWEB_VERSION, true );
-	
+
 	$schemes = array();
-	foreach( caweb_template_versions() as $v => $label ){
-		$schemes["$v"] = caweb_color_schemes( $v );
+	foreach ( caweb_template_versions() as $v => $label ) {
+		$schemes[ "$v" ] = caweb_color_schemes( $v );
 	}
 
 	wp_localize_script(
 		'caweb-customizer-controls-script',
 		'caweb_admin_args',
 		array(
-			'caweb_colorschemes' => $schemes
+			'caweb_colorschemes' => $schemes,
 		)
 	);
 
@@ -145,25 +145,25 @@ function caweb_customize_register( $wp_customize ) {
 	caweb_customize_register_social_media_settings( $wp_customize );
 
 	// Custom CSS.
-	//caweb_customize_register_custom_file_settings( $wp_customize );
+	// caweb_customize_register_custom_file_settings( $wp_customize );.
 
 	// Custom JS.
-	//caweb_customize_register_custom_file_settings( $wp_customize, 'js' );
+	// caweb_customize_register_custom_file_settings( $wp_customize, 'js' );.
 
-	// Alert Banners
-	//caweb_customize_register_alert_banner_settings( $wp_customize );
+	// Alert Banners.
+	// caweb_customize_register_alert_banner_settings( $wp_customize );.
 }
 
 /**
  * CAWeb Register Customizer
  * Registers CAWeb Options General Settings
- * 
+ *
  * @link https://developer.wordpress.org/reference/hooks/customize_register/
  * @param  WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
  *
  * @return void
  */
-function caweb_customize_register_general_settings( $wp_customize ){
+function caweb_customize_register_general_settings( $wp_customize ) {
 	$site_version = caweb_template_version();
 
 	$wp_customize->add_section(
@@ -184,7 +184,7 @@ function caweb_customize_register_general_settings( $wp_customize ){
 		)
 	);
 
-	$versions = caweb_template_versions(); 
+	$versions = caweb_template_versions();
 
 	$wp_customize->add_control(
 		new WP_Customize_Control(
@@ -324,13 +324,13 @@ function caweb_customize_register_general_settings( $wp_customize ){
 /**
  * CAWeb Register Customizer
  * Registers CAWeb Options Utility Header Settings
- * 
+ *
  * @link https://developer.wordpress.org/reference/hooks/customize_register/
  * @param  WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
  *
  * @return void
  */
-function caweb_customize_register_utility_header_settings( $wp_customize ){
+function caweb_customize_register_utility_header_settings( $wp_customize ) {
 	$wp_customize->add_section(
 		'caweb_utility_header',
 		array(
@@ -350,7 +350,6 @@ function caweb_customize_register_utility_header_settings( $wp_customize ){
 		)
 	);
 
-	
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
@@ -419,12 +418,12 @@ function caweb_customize_register_utility_header_settings( $wp_customize ){
 		$wp_customize->add_setting(
 			"ca_utility_link_${link}_enable",
 			array(
-				'type'      => 'option',
-				'default'   => $enable,
+				'type'              => 'option',
+				'default'           => $enable,
 				'sanitize_callback' => 'caweb_sanitize_customizer_checkbox',
 			)
 		);
-	
+
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -513,13 +512,13 @@ function caweb_customize_register_utility_header_settings( $wp_customize ){
 /**
  * CAWeb Register Customizer
  * Registers CAWeb Options Page Header Settings
- * 
+ *
  * @link https://developer.wordpress.org/reference/hooks/customize_register/
  * @param  WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
  *
  * @return void
  */
-function caweb_customize_register_page_header_settings( $wp_customize ){
+function caweb_customize_register_page_header_settings( $wp_customize ) {
 	$wp_customize->add_section(
 		'caweb_page_header',
 		array(
@@ -533,8 +532,8 @@ function caweb_customize_register_page_header_settings( $wp_customize ){
 	$wp_customize->add_setting(
 		'header_ca_branding',
 		array(
-			'type'    => 'option',
-			'default' => get_option( 'header_ca_branding', '' ),
+			'type'      => 'option',
+			'default'   => get_option( 'header_ca_branding', '' ),
 			'transport' => 'postMessage',
 		)
 	);
@@ -555,13 +554,13 @@ function caweb_customize_register_page_header_settings( $wp_customize ){
 /**
  * CAWeb Register Customizer
  * Registers CAWeb Options Google Settings
- * 
+ *
  * @link https://developer.wordpress.org/reference/hooks/customize_register/
  * @param  WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
  *
  * @return void
  */
-function caweb_customize_register_google_settings( $wp_customize ){
+function caweb_customize_register_google_settings( $wp_customize ) {
 	$wp_customize->add_section(
 		'caweb_google',
 		array(
@@ -637,7 +636,7 @@ function caweb_customize_register_google_settings( $wp_customize ){
 		)
 	);
 
-	// Google Translate
+	// Google Translate.
 	$wp_customize->add_setting(
 		'ca_google_trans_enabled',
 		array(
@@ -686,7 +685,7 @@ function caweb_customize_register_google_settings( $wp_customize ){
 		)
 	);
 
-	// Google Translate Icon ( Custom Only ). 
+	// Google Translate Icon ( Custom Only ).
 	$wp_customize->add_setting(
 		'ca_google_trans_icon',
 		array(
@@ -735,13 +734,13 @@ function caweb_customize_register_google_settings( $wp_customize ){
 /**
  * CAWeb Register Customizer
  * Registers CAWeb Options Google Settings
- * 
+ *
  * @link https://developer.wordpress.org/reference/hooks/customize_register/
  * @param  WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
  *
  * @return void
  */
-function caweb_customize_register_social_media_settings( $wp_customize ){
+function caweb_customize_register_social_media_settings( $wp_customize ) {
 	$wp_customize->add_section(
 		'caweb_social_media',
 		array(
@@ -765,7 +764,7 @@ function caweb_customize_register_social_media_settings( $wp_customize ){
 				),
 			)
 		);
-  
+
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -853,15 +852,15 @@ function caweb_customize_register_social_media_settings( $wp_customize ){
 /**
  * CAWeb Register Customizer
  * Registers CAWeb Options Custom CSS/JS Settings
- * 
+ *
  * @todo Enable Upload of CSS/JS files.
  * @link https://developer.wordpress.org/reference/hooks/customize_register/
  * @param  WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
- * @param  string $file_type File type to control..
+ * @param  string               $file_type File type to control..
  *
  * @return void
  */
-function caweb_customize_register_custom_file_settings( $wp_customize, $file_type = 'css' ){
+function caweb_customize_register_custom_file_settings( $wp_customize, $file_type = 'css' ) {
 	$label = strtoupper( $file_type );
 
 	// Custom File.
@@ -876,7 +875,8 @@ function caweb_customize_register_custom_file_settings( $wp_customize, $file_typ
 		)
 	);
 
-	/* 
+	//phpcs:disable
+	/*
 	// Uploaded Files.
 	$wp_customize->add_setting(
 		"caweb_external_$file_type,
@@ -884,7 +884,7 @@ function caweb_customize_register_custom_file_settings( $wp_customize, $file_typ
 			'type'    => 'option',
 		)
 	);
-	
+
 	$wp_customize->add_control(
 		new WP_Customize_Upload_Control(
 			$wp_customize,
@@ -896,6 +896,7 @@ function caweb_customize_register_custom_file_settings( $wp_customize, $file_typ
 		)
 	);
 	*/
+	//phpcs:enable
 
 	// Custom File.
 	$wp_customize->add_setting(
@@ -923,18 +924,18 @@ function caweb_customize_register_custom_file_settings( $wp_customize, $file_typ
 /**
  * CAWeb Register Customizer
  * Registers CAWeb Options Alert Banner Settings
- * 
+ *
  * @link https://developer.wordpress.org/reference/hooks/customize_register/
  * @param  WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
  *
  * @return void
  */
-function caweb_customize_register_alert_banner_settings( $wp_customize ){
+function caweb_customize_register_alert_banner_settings( $wp_customize ) {
 
 	$wp_customize->add_section(
 		'caweb_alert_banners',
 		array(
-			'title'    => "Alert Banners",
+			'title'    => 'Alert Banners',
 			'priority' => 30,
 			'panel'    => 'caweb_options',
 		)
@@ -944,7 +945,7 @@ function caweb_customize_register_alert_banner_settings( $wp_customize ){
 		'caweb_add_alert_banner',
 		array(
 			'type'    => 'option',
-			'default' => 'New Banner'
+			'default' => 'New Banner',
 		)
 	);
 
@@ -953,8 +954,8 @@ function caweb_customize_register_alert_banner_settings( $wp_customize ){
 			$wp_customize,
 			'caweb_add_alert_banner',
 			array(
-				'type'       => 'button',
-				'section'    => 'caweb_alert_banners',
+				'type'        => 'button',
+				'section'     => 'caweb_alert_banners',
 				'input_attrs' => array(
 					'class' => 'button button-primary',
 				),
@@ -962,7 +963,7 @@ function caweb_customize_register_alert_banner_settings( $wp_customize ){
 		)
 	);
 
-	// This is the sample alert banner which all new banners are created from
+	// This is the sample alert banner which all new banners are created from.
 	$wp_customize->add_setting( 'caweb_alert_banner_sample' );
 
 	$wp_customize->add_control(
@@ -970,40 +971,46 @@ function caweb_customize_register_alert_banner_settings( $wp_customize ){
 			$wp_customize,
 			'caweb_alert_banner_sample',
 			array(
-				'section'    => 'caweb_alert_banners',
-				'is_expanded' => true
+				'section'     => 'caweb_alert_banners',
+				'is_expanded' => true,
 			)
 		)
 	);
 
-	// Add a setting per alert banner
+	// Add a setting per alert banner.
 	$caweb_alerts = get_option( 'caweb_alerts', array() );
 
-	foreach( $caweb_alerts as $a => $alert ){
-		// Alert Setting
-		$wp_customize->add_setting( "caweb_alert_banner_$a", array( 'type' => 'option', 'transport' => 'postMessage' ) );
+	foreach ( $caweb_alerts as $a => $alert ) {
+		// Alert Setting.
+		$wp_customize->add_setting(
+			"caweb_alert_banner_$a",
+			array(
+				'type'      => 'option',
+				'transport' => 'postMessage',
+			)
+		);
 
-		// Alert Control
+		// Alert Control.
 		$wp_customize->add_control(
 			new CAWeb_Customize_Alert_Banner_Control(
 				$wp_customize,
 				"caweb_alert_banner_$a",
 				array(
-					'section'    => 'caweb_alert_banners',
-					'header' => $alert['header'],
-					'message' => $alert['message'],
-					'display_on' => $alert['page_display'],
-					'banner_color' => $alert['color'],
-					'read_more' => $alert['button'],
-					'read_more_text' => $alert['text'],
-					'read_more_url' => $alert['url'],
+					'section'          => 'caweb_alert_banners',
+					'header'           => $alert['header'],
+					'message'          => $alert['message'],
+					'display_on'       => $alert['page_display'],
+					'banner_color'     => $alert['color'],
+					'read_more'        => $alert['button'],
+					'read_more_text'   => $alert['text'],
+					'read_more_url'    => $alert['url'],
 					'read_more_target' => $alert['target'],
-					'icon' => $alert['icon'],
-					'active' => $alert['status'],
+					'icon'             => $alert['icon'],
+					'active'           => $alert['status'],
 				)
 			)
 		);
-		
+
 	}
 
 }
@@ -1012,22 +1019,22 @@ function caweb_customize_register_alert_banner_settings( $wp_customize ){
  * CAWeb Utility Header Custom Link Options Check
  * Default callback used when invoking WP_Customize_Control::active().
  * Determine if the Utility Header Custom Link is enabled.
- * 
+ *
  * @link https://developer.wordpress.org/reference/classes/wp_customize_control/active_callback/
  * @param   WP_Customize_Control $customizer  WP_Customize_Control instance.
  *
  * @return bool
  */
-function caweb_is_custom_link_enabled( $customizer ){
-	$parent_option = preg_replace('/.*(ca_utility_link_\d).*/', '$1', $customizer->get_link() );
-	return '1' === $customizer->manager->get_control("${parent_option}_enable")->value() ? true : false;
+function caweb_is_custom_link_enabled( $customizer ) {
+	$parent_option = preg_replace( '/.*(ca_utility_link_\d).*/', '$1', $customizer->get_link() );
+	return '1' === $customizer->manager->get_control( "${parent_option}_enable" )->value() ? true : false;
 }
 
 /**
  * CAWeb Google Translate Option Check
  * Default callback used when invoking WP_Customize_Control::active().
  * Determine if the Google Translate Option is set to 'custom'.
- * 
+ *
  * @link https://developer.wordpress.org/reference/classes/wp_customize_control/active_callback/
  * @param   WP_Customize_Control $customizer  WP_Customize_Control instance.
  *

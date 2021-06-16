@@ -12,14 +12,12 @@ jQuery(document).ready(function() {
 		var header_title = header.length ?
 				 ( $(header).children('a').length ? $(header).children('a')[0].innerText : header[0].innerText ) : '';
 
-		if( ! $(element).find('a').length && $(element).hasClass('et_clickable')){ 
-			$(element).prepend('<a href="#"><span class="sr-only">' + header_title + '</span></a>');
-		}else if( $(element).find('.et_pb_main_blurb_image').children('a').length ){
-			var blurb_img = $(element).find('.et_pb_main_blurb_image');
+		var blurb_img = $(element).find('.et_pb_main_blurb_image');
+		var img_link = $(blurb_img).find('a');
 
-			$(blurb_img).removeAttr('aria-hidden');
-			
-			$($(blurb_img).children('a')[0]).prepend('<span class="sr-only">' + header_title + '</span>');
+		if( blurb_img.length && img_link.length ){
+			$(img_link).attr('title', header_title);
+
 		}
 
 		$(element).children('a').on('focusin', function(){ 

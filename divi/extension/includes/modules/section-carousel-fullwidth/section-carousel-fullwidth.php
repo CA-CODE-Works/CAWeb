@@ -2,7 +2,7 @@
 /**
  * CAWeb Section Carousel Module Class (Fullwidth)
  *
- * @package CAWeb Module Extension
+ * @package CAWebModuleExtension
  */
 
 if ( ! class_exists( 'ET_Builder_CAWeb_Module' ) ) {
@@ -78,6 +78,7 @@ class CAWeb_Module_Fullwidth_Section_Carousel extends ET_Builder_CAWeb_Module {
 					'image_fit'   => esc_html__( 'Image Fit', 'et_builder' ),
 					'media'       => esc_html__( 'Media', 'et_builder' ),
 				),
+				'default'         => 'content_fit',
 				'tab_slug'        => 'general',
 				'toggle_slug'     => 'style',
 			),
@@ -186,9 +187,9 @@ class CAWeb_Module_Fullwidth_Section_Carousel extends ET_Builder_CAWeb_Module {
 				'label'             => esc_html__( 'Heading Size', 'et_builder' ),
 				'type'              => 'select',
 				'option_category'   => 'configuration',
-				'options'           => $this->caweb_get_text_sizes( array( 'p', 'h6') ),
+				'options'           => $this->caweb_get_text_sizes( array( 'p', 'h6' ) ),
 				'default'           => 'h4',
-				'show_if'         => array(
+				'show_if'           => array(
 					'carousel_style' => 'media',
 					'in_panel'       => 'on',
 				),
@@ -277,11 +278,11 @@ class CAWeb_Module_Fullwidth_Section_Carousel extends ET_Builder_CAWeb_Module {
 	 * @return string
 	 */
 	public function renderPanelCarousel( $section_bg_color ) {
-		$panel_title       = $this->props['panel_title'];
+		$panel_title        = $this->props['panel_title'];
 		$panel_heading_size = $this->props['panel_heading_size'];
-		$panel_show_button = $this->props['panel_show_button'];
-		$panel_button_text = $this->props['panel_button_text'];
-		$panel_button_link = $this->props['panel_button_link'];
+		$panel_show_button  = $this->props['panel_show_button'];
+		$panel_button_text  = $this->props['panel_button_text'];
+		$panel_button_link  = $this->props['panel_button_link'];
 
 		$display_title  = '';
 		$display_button = '';

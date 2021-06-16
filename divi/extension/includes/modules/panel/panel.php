@@ -2,7 +2,7 @@
 /**
  * CAWeb Panel Module (Standard)
  *
- * @package CAWeb Module Extension
+ * @package CAWebModuleExtension
  */
 
 if ( ! class_exists( 'ET_Builder_CAWeb_Module' ) ) {
@@ -168,7 +168,7 @@ class CAWeb_Module_Panel extends ET_Builder_CAWeb_Module {
 				'label'             => esc_html__( 'Heading Size', 'et_builder' ),
 				'type'              => 'select',
 				'option_category'   => 'configuration',
-				'options'           => $this->caweb_get_text_sizes( array( 'p', 'h6') ),
+				'options'           => $this->caweb_get_text_sizes( array( 'p', 'h6' ) ),
 				'default'           => 'h4',
 				'description'       => esc_html__( 'Here you can choose the heading size for the panel title.', 'et_builder' ),
 				'tab_slug'          => 'advanced',
@@ -252,7 +252,7 @@ class CAWeb_Module_Panel extends ET_Builder_CAWeb_Module {
 
 		if ( ! empty( $title ) ) {
 			$heading_size = $this->props['heading_size'];
-			
+
 			$display_options = '';
 			$display_icon    = 'on' === $use_icon ? $this->caweb_get_icon_span( $icon, 'pr-1', 'vertical-align:sub;' ) : '';
 

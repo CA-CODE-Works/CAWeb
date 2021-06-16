@@ -33,10 +33,8 @@ function caweb_fav_icon_checker() {
 	$handle = array_splice( $handle, 0, 4 );
 	$handle = implode( '', $handle );
 
-	/*
-	ico = '00000100'
-	png = '89PNG0D0A1A'
-	*/
+	// ico = '00000100'.
+	// png = '89PNG0D0A1A'.
 	$mime_patterns = array( '00000100', '89PNG0D0A1A' );
 
 	if ( in_array( $handle, $mime_patterns, true ) ) {
@@ -51,7 +49,7 @@ function caweb_fav_icon_checker() {
 /**
  * Return CAWeb Icon Menu
  *
- * @return string
+ * @return void
  */
 function caweb_icon_menu_func() {
 	$input  = isset( $_POST['name'] ) ? $_POST['name'] : '';
@@ -68,7 +66,7 @@ function caweb_icon_menu_func() {
 		),
 		caweb_allowed_html( array(), true )
 	);
-	wp_die(); // this is required to terminate immediately and return a proper response
+	wp_die(); // this is required to terminate immediately and return a proper response.
 
 }
 
@@ -81,7 +79,7 @@ function caweb_doc_create_xml() {
 	$site_id   = get_current_blog_id();
 	$directory = wp_upload_dir();
 
-	if ( $site_id === 1 ) {
+	if ( 1 === $site_id ) {
 		$wp_posts_table = 'wp_posts';
 	} else {
 		$wp_posts_table = 'wp_' . $site_id . '_posts';
@@ -118,5 +116,5 @@ function caweb_doc_create_xml() {
 	$href = $directory['baseurl'] . '/pdf-word-sitemap.xml';
 
 	print "Sitemap created with <strong>$count</strong> entries. File location: <a href=\"$href\" target=\"_blank\">SiteMap</a>";
-	wp_die(); // this is required to terminate immediately and return a proper response
+	wp_die(); // this is required to terminate immediately and return a proper response.
 }

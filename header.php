@@ -16,6 +16,8 @@ $caweb_google_meta_id     = get_option( 'ca_google_meta_id', '' );
 $caweb_apple_icon = CAWEB_URI . '/images/system/apple-touch-icon';
 
 ?>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
 
 <head>
 	<meta charset="utf-8">
@@ -59,11 +61,6 @@ $caweb_apple_icon = CAWEB_URI . '/images/system/apple-touch-icon';
 
 	<?php
 
-	/*  Everything Else */
-
 	wp_head();
-
 	?>
-
-
 </head>

@@ -14,7 +14,7 @@ $toggle = CAWEB_MINIMUM_SUPPORTED_TEMPLATE_VERSION < caweb_template_version() ? 
             <span class="ca-gov-icon-search hidden-print" aria-hidden="true"></span><span class="sr-only">Search</span>
         </button>
         <?php endif; ?>
-        <button id="nav-icon3" class="mobile-control toggle-menu" aria-expanded="false" aria-controls="navigation" <?php print $toggle; ?>>
+        <button id="nav-icon3" class="mobile-control toggle-menu" aria-expanded="false" aria-controls="navigation" data-toggle="collapse" data-target="#navigation"<?php print $toggle; ?>>
             <span></span>
             <span></span>
             <span></span>

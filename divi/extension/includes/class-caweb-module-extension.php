@@ -1,5 +1,13 @@
 <?php
+/**
+ * CAWeb Module Extension
+ *
+ * @package CAWebModuleExtension
+ */
 
+/**
+ * CAWEB_Module_Extension
+ */
 class CAWEB_Module_Extension extends DiviExtension {
 
 	/**
@@ -32,12 +40,14 @@ class CAWEB_Module_Extension extends DiviExtension {
 	/**
 	 * CAWEB_Module_Extension constructor.
 	 *
-	 * @param string $name
-	 * @param array  $args
+	 * @param string $name WP Plugin Slug.
+	 * @param array  $args Arguments to pass to the DiviExtension.
 	 */
 	public function __construct( $name = 'caweb-module-extension', $args = array() ) {
-		//$this->plugin_dir     = plugin_dir_path( __FILE__ );
-		//$this->plugin_dir_url = plugin_dir_url( $this->plugin_dir );
+		//phpcs:disable
+		// $this->plugin_dir     = plugin_dir_path( __FILE__ );
+		// $this->plugin_dir_url = plugin_dir_url( $this->plugin_dir );
+		//phpcs:enable
 		$this->plugin_dir     = CAWEB_EXT_DIR . 'includes/';
 		$this->plugin_dir_url = CAWEB_EXT_URL;
 
@@ -45,4 +55,4 @@ class CAWEB_Module_Extension extends DiviExtension {
 	}
 }
 
-new CAWEB_Module_Extension;
+new CAWEB_Module_Extension();

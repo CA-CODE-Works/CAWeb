@@ -1,3 +1,66 @@
+CAWeb v1.5.5
+- Enforced WPCS on inc/functions.php
+- Added new transformation to phpDoc template
+- Added additional comments to files
+- Added setting to phpdoc.dist.xml
+- Disabled XML-RPF
+- Fixed Copyright double reading
+- Fixed issue with live drafts running whenever Divi triggered a Save Post
+- Regenerated Font Sheet to fix share-Instagram icon to share-instagram
+- Updated placeholder text to show "Search" instead of Search Homepage
+- Removed "Translate" wording from Google Translate 
+- Removed 404 search
+- Added new Flex MegaMenu
+- Added default to slide title field if using media in Section Carousel Slide(Standard/Fullwidth)
+- Added default to profile link field in Profile Banner
+- Added lang attribute to html element in Divi Projects 
+- Removed Divi viewport meta
+- Fixed Blurb Module hiding blurb image
+- Fixed Tab Module (Divi) changed tabList to tablist
+- Added missing title text to the following:
+        Section Footer Group (Standard/Fullwidth) links
+        Person Module (Divi) social links 
+        Slider Module (Divi) arrows 
+        Image Module (Divi) when used with link 
+- Added missing alt text to the following:
+        Organization Logo image 
+        Gallery Module (Divi) images
+        Course Post Detail Presenter image
+        Event Post Detail Presenter image
+        Image Module (Divi)  
+- Added missing title text to the following:
+        Course Post Detail map iframe
+        Event Post Detail map iframe 
+        Exam Post Detail map iframe
+
+CAWeb v1.5.4
+June 3, 2021
+- Deprecated Template version 5.0
+- Fixed navigation issue with description not rendering
+
+CAWeb v1.5.3
+May 20, 2021
+- Upgraded & sync formatting between template and theme
+- Added the Strict-Transport-Security Header
+- Added Heading Field to Post List, Section Footer, Card, Github, Section Carousel, Panel and Section Primary Modules
+- Added new live drafts feature
+
+CAWeb v1.5.1
+February 25, 2021
+- Grey out Google Analytics ID option when Google Tag Manager is used
+- Resolved TablePress-toggle-accordion conflicts
+- Updated Google Analytics code
+- Fixed Post Tags missing
+
+CAWeb v1.5.0
+November 5, 2020
+- Suppress the down carrot navigation item
+- Added Panel Heading Field to Panel Module
+- Enable new Google Tag Manager option 
+- Sanitizing Search box input
+- Added WP_TEMP_DIR constant to Theme 
+- Added State Template 5.5
+
 CAWeb v1.4.1
 March 26, 2018
 - WordPress Thickbox function enabled 

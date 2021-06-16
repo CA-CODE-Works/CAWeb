@@ -1,14 +1,19 @@
 <?php
+/**
+ * Loads the extensions module files
+ *
+ * @package CAWebModuleExtension
+ */
 
 if ( ! class_exists( 'ET_Builder_Element' ) ) {
 	return;
 }
 
-$module_files = glob( __DIR__ . '/modules/*/*.php' );
+$caweb_module_files = glob( __DIR__ . '/modules/*/*.php' );
 
-// Load custom Divi Builder modules
-foreach ( (array) $module_files as $module_file ) {
-	if ( $module_file && preg_match( "/\/modules\/\b([^\/]+)\/\\1\.php$/", $module_file ) ) {
-		require_once $module_file;
+// Load custom Divi Builder modules.
+foreach ( (array) $caweb_module_files as $caweb_module_file ) {
+	if ( $caweb_module_file && preg_match( "/\/modules\/\b([^\/]+)\/\\1\.php$/", $caweb_module_file ) ) {
+		require_once $caweb_module_file;
 	}
 }

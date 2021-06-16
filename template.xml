@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template>
-    <name>caweb</name>
+    <name>caweb-addon</name>
     <author>Danny Guzman</author>
-     <email>guzmanjd86@gmail.com</email>
-     <description>phpDocumentor Template Config File for the CAWeb WordPress Theme</description>
+    <email>guzmanjd86@gmail.com</email>
+    <description>phpDocumentor Template Addon</description>
     <version>1.0.0</version>
-    <parameters>
-      <parameter key="twig-debug">true</parameter>
-    </parameters>
     <transformations>
-      <transformation writer="FileIo" query="copy" source="css/cagov-v5.5-santa barbara.css" artifact="css/caweb.core.css"/>
-      <transformation writer="FileIo" query="copy" source="vendor/caweb/phpdoc/css/phpdoc.css" artifact="css/phpdoc.css"/>
-      <transformation writer="FileIo" query="copy" source="js/caweb-v5.5.js" artifact="js/caweb.core.js"/>
-      <transformation writer="FileIo" query="copy" source="js/libs/jquery.js" artifact="js/jquery.js"/>
-      <transformation writer="FileIo" query="copy" source="images/system/favicon.ico" artifact="favicon.ico"/>
-      <transformation writer="FileIo" query="copy" source="images/system/caweb-logo.png" artifact="imgs/branding.png"/>
-      <transformation writer="FileIo" query="copy" source="images/system/caweb_logo.png" artifact="imgs/caweb-logo.png"/>
-      <transformation writer="FileIo" query="copy" source="fonts/" artifact="fonts/"/>
-      <transformation writer="twig" source="vendor/caweb/phpdoc/index.html.twig" artifact="index.html" />
-      <transformation writer="twig" query="indexes.classes" source="vendor/caweb/phpdoc/classes.html.twig" />
-      <transformation writer="twig" query="files" source="vendor/caweb/phpdoc/files.html.twig" artifact="files.html" />
-      <transformation writer="twig" query="files" source="vendor/caweb/phpdoc/files.source.html.twig" />
-      <transformation writer="twig" source="vendor/caweb/phpdoc/filters.html.twig" artifact="filters.html" />
+        <transformation writer="FileIo" query="copy" source="css/" artifact="css/" />
+        <transformation writer="FileIo" query="copy" source="fonts/" artifact="fonts/" />
+        <transformation writer="FileIo" query="copy" source="js/caweb-v5.5.js" artifact="js/caweb-v5.5.js" />
+        <transformation writer="FileIo" query="copy" source="js/libs/jquery.js" artifact="js/jquery.js" />
     </transformations>
 </template>

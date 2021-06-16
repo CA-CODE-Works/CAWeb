@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<phpdocumentor
-        configVersion="3"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="https://www.phpdoc.org"
-        xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/latest/phpdoc.xsd"
->
+<phpdocumentor configVersion="3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://www.phpdoc.org" xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/latest/phpdoc.xsd">
     <paths>
-        <output>docs</output>
+        <output>.docs</output>
     </paths>
     <version number="3.0.0">
         <api>
-		<default-package-name>CAWeb</default-package-name>
-		<source dsn=".">
-	        </source>
-		<ignore>
-	                <path>assets/**/*</path>
-	                <path>documentation/**/*</path>
-	                <path>css/**/*</path>
-	                <path>divi/**/*</path>
-	                <path>fonts/**/*</path>
-	                <path>images/**/*</path>
-	                <path>js/**/*</path>
-	                <path>node-modules/**/*</path>
-	                <path>page-templates/**/*</path>
-	                <path>vendor/**/*</path>
-		</ignore>
+            <default-package-name>CAWeb</default-package-name>
+            <source dsn=".">
+            </source>
+            <ignore>
+                <path>assets/**/*</path>
+                <path>css/**/*</path>
+                <path>docs/**/*</path>
+                <path>fonts/**/*</path>
+                <path>images/**/*</path>
+                <path>js/**/*</path>
+                <path>node-modules/**/*</path>
+                <path>page-templates/**/*</path>
+                <path>partials/**/*</path>
+                <path>vendor/**/*</path>
+                <path>.phpdoc/**/*</path>
+            </ignore>
         </api>
     </version>
-	<setting name="wp_hook_ref" value="https://developer.wordpress.org/reference/hooks/" />
+    <!-- Settings Option not working properly in phpDocumentor v3.0.0
+	<setting name="wp_ref" value="https://developer.wordpress.org/reference/" />
 	<setting name="github_ref" value="https://github.com/" />
 	<setting name="github_user" value="CA-CODE-Works" />
+	<setting name="github_repo" value="CAWeb" />
 	<setting name="github_branch" value="dev" />
-	<template name="." location="."></template>
+	<setting name="stable_version" value="1.5.3" /.
+	-->
+    <template name="vendor/caweb/phpdoc/" location="vendor/caweb/phpdoc/" />
+    <template name="." location="." />
+
 </phpdocumentor>

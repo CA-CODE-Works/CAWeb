@@ -27,7 +27,7 @@
 .et_pb_module.et_pb_ca_post_list.faqs-list .et_pb_toggle_open .panel-heading:before,
 .et_pb_module.et_pb_ca_post_list.faqs-list .et_pb_toggle_close .panel-heading:before {
 	content: '';
-} 
+}
 .et_pb_module.et_pb_ca_post_list.faqs-list .et_pb_toggle_open .panel-heading ,
 .et_pb_module.et_pb_ca_post_list.faqs-list .et_pb_toggle_close .panel-heading {
 	border-bottom: inherit;

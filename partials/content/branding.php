@@ -15,7 +15,7 @@ $caweb_logo_alt_text = ! empty( get_option( 'header_ca_branding_alt_text', '' ) 
 <div class="branding">
 	<div class="header-organization-banner">
 		<a href="/">
-			<img src="<?php print esc_url( $caweb_logo ); ?>" alt="<?php print esc_attr( $caweb_logo_alt_text ); ?>" />
+			<img alt="<?php print esc_attr( get_bloginfo( 'name' ) ); ?> Logo" src="<?php print esc_url( $caweb_logo ); ?>" alt="<?php print esc_attr( $caweb_logo_alt_text ); ?>" />
 		</a>
 	</div>
 </div>

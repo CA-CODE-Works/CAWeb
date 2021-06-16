@@ -26884,8 +26884,8 @@ html.high-contrast input[type="radio"]:checked + * .color-white--checked {
 
 @font-face {
   font-family: 'CaGov';
-  src: url("../fonts/CaGov.eot?a8yc2v");
-  src: url("../fonts/CaGov.eot?a8yc2v#iefix") format("embedded-opentype"), url("../fonts/CaGov.ttf?a8yc2v") format("truetype"), url("../fonts/CaGov.woff?a8yc2v") format("woff"), url("../fonts/CaGov.svg?a8yc2v#CaGov") format("svg");
+  src: url("../fonts/CaGov.eot?p6gye5");
+  src: url("../fonts/CaGov.eot?p6gye5#iefix") format("embedded-opentype"), url("../fonts/CaGov.ttf?p6gye5") format("truetype"), url("../fonts/CaGov.woff?p6gye5") format("woff"), url("../fonts/CaGov.svg?p6gye5#CaGov") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -30154,7 +30154,8 @@ body:not(.sticky_nav) #main-content.main-content {
   right: 0;
 }
 
-.second-level-nav {
+/* Styles for Second level navs not using flex */
+.second-level-nav:not(.flex) {
   display: block;
   position: relative !important;
   opacity: 1 !important;
@@ -30163,16 +30164,16 @@ body:not(.sticky_nav) #main-content.main-content {
   padding: 0 !important;
 }
 
-.second-level-nav li {
+.second-level-nav:not(.flex) li {
   float: left;
 }
 
-.second-level-nav .second-level-link {
+.second-level-nav:not(.flex) .second-level-link {
   font-size: 17.6px;
   font-size: 1.1rem;
 }
 
-.unit2, .unit3, .unit3 .nav-media .media {
+.second-level-nav:not(.flex) .unit2, .second-level-nav:not(.flex) .unit3, .second-level-nav:not(.flex) .unit3 .nav-media .media {
   height: 130px;
 }
 
@@ -30188,13 +30189,6 @@ nav li {
 }
 
 @media (min-width: 768px) {
-  /* Main Navigation fix, increases height when links main links wrap */
-  body.v5 .main-navigation {
-    display: flex;
-    flex-direction: row-reverse;
-    padding-left: 320px;
-    max-height: 300px !important;
-  }
   .top-level-nav .nav-item {
     padding: 0 6px;
   }
@@ -30203,17 +30197,6 @@ nav li {
 @media (min-width: 992px) {
   .top-level-nav .nav-item {
     padding: 0 8px;
-  }
-}
-
-/* Carrots */
-body.v5 header nav .top-level-nav .nav-item .ca-gov-icon-caret-right {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  body.v5 header nav .top-level-nav .nav-item .carrot {
-    display: none;
   }
 }
 

@@ -2,7 +2,7 @@
 /**
  * CAWeb Service Tiles Item (Fullwidth)
  *
- * @package CAWeb Module Extension
+ * @package CAWebModuleExtension
  */
 
 if ( ! class_exists( 'ET_Builder_CAWeb_Module' ) ) {

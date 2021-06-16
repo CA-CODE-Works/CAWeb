@@ -13,27 +13,29 @@
 	right: 0;
 }
 
-.second-level-nav {
+/* Styles for Second level navs not using flex */
+.second-level-nav:not(.flex) {
 	display: block;
 	position: relative !important;
 	opacity: 1 !important;
 	visibility: visible !important;
 	width: auto !important;
 	padding: 0 !important;
+
+	li{
+		float: left;
+	}
+
+	.second-level-link{
+		font-size: 17.6px;
+		font-size: 1.1rem;
+	}
+
+	.unit2 , .unit3, .unit3 .nav-media .media{
+		height: 130px;
+	}
 }
 
-.second-level-nav li{
-	float: left;
-}
-
-.second-level-nav .second-level-link{
-	font-size: 17.6px;
-	font-size: 1.1rem;
-}
-
-.unit2 , .unit3, .unit3 .nav-media .media{
-	height: 130px;
-}
 
 nav li{
 	line-height: 1.45 !important;
@@ -47,14 +49,6 @@ nav li{
 }
 
 @media (min-width: 768px){
-	/* Main Navigation fix, increases height when links main links wrap */
-	body.v5 .main-navigation{
-	  display: flex;
-	  flex-direction: row-reverse;
-	  padding-left: 320px;
-	  max-height: 300px !important;
-	}
-
 	.top-level-nav .nav-item {
 		padding: 0 6px;
 	}
@@ -63,17 +57,6 @@ nav li{
 @media (min-width: 992px){
 	.top-level-nav .nav-item {
 		padding: 0 8px;
-	}
-}
-
-/* Carrots */
-body.v5 header nav .top-level-nav .nav-item .ca-gov-icon-caret-right{
-	display: none;
-}
-
-@media (max-width: 767px) {
-	body.v5 header nav .top-level-nav .nav-item .carrot{
-		display: none;
 	}
 }
 

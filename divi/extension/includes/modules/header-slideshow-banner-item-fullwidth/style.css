@@ -1,12 +1,12 @@
 /* Fullwidth Header Slideshow Banner Item */
 .et_pb_ca_fullwidth_banner_item.et_pb_module.slide .slide-text{
-    max-width: 50%;
-    padding-bottom: 15px !important;
-    bottom: 50%;
+	max-width: 50%;
+	padding-bottom: 15px !important;
+	bottom: 50%;
 }
 .et_pb_ca_fullwidth_banner_item.et_pb_module.slide .slide-text.center{
-    left: 25%;
+	left: 25%;
 }
 .et_pb_ca_fullwidth_banner_item.et_pb_module.slide .slide-text.right{
-    left: 50%;
+	left: 50%;
 }

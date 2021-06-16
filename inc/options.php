@@ -403,7 +403,7 @@ function caweb_save_options( $values = array(), $files = array() ) {
 			'color'        => isset( $values[ "alert-banner-color-$i" ] ) ? $values[ "alert-banner-color-$i" ] : '#FDB81E',
 			'button'       => isset( $values[ "alert-read-more-$i" ] ) ? $values[ "alert-read-more-$i" ] : '',
 			'url'          => isset( $values[ "alert-read-more-url-$i" ] ) ? $values[ "alert-read-more-url-$i" ] : '',
-			'text'          => isset( $values[ "alert-read-more-text-$i" ] ) ? $values[ "alert-read-more-text-$i" ] : '',
+			'text'         => isset( $values[ "alert-read-more-text-$i" ] ) ? $values[ "alert-read-more-text-$i" ] : '',
 			'target'       => isset( $values[ "alert-read-more-target-$i" ] ) ? $values[ "alert-read-more-target-$i" ] : '',
 			'icon'         => isset( $values[ "alert-icon-$i" ] ) ? $values[ "alert-icon-$i" ] : '',
 		);

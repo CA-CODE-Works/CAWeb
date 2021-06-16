@@ -24,10 +24,10 @@ $caweb_google_trans_icon    = get_option( 'ca_google_trans_icon', '' );
 /* Google Tag Manager */
 $google_tag_manager_id = get_option( 'ca_google_tag_manager_id', '' );
 
-if( ! empty($google_tag_manager_id) ):
-	$src = sprintf('https://www.googletagmanager.com/ns.html?id=%1$s', $google_tag_manager_id);
+if ( ! empty( $google_tag_manager_id ) ) :
+	$src = sprintf( 'https://www.googletagmanager.com/ns.html?id=%1$s', $google_tag_manager_id );
 
-?>
+	?>
 <!-- Google Tag Manager (noscript) -->
 <noscript>
 	<iframe src="<?php print $src; ?>" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -40,22 +40,22 @@ if( ! empty($google_tag_manager_id) ):
 	<?php
 
 	/* Alerts */
-	require_once( 'content/alerts.php' );
+	require_once 'content/alerts.php';
 
 	/* Include Utility Header */
-	require_once( 'content/utility-header.php' );
+	require_once 'content/utility-header.php';
 
 	/* Include Location Bar */
-	require_once( 'content/bar-location.php' );
+	require_once 'content/bar-location.php';
 
 	/* Include Settings Bar */
-	require_once( 'content/bar-settings.php' );
+	require_once 'content/bar-settings.php';
 
 	/* Include Branding */
-	require_once( 'content/branding.php' );
+	require_once 'content/branding.php';
 
 	/* Include Mobile Controls */
-	require_once( 'content/mobile-controls.php' );
+	require_once 'content/mobile-controls.php';
 
 	?>
 
@@ -79,7 +79,7 @@ if( ! empty($google_tag_manager_id) ):
 		<div id="head-search" class="search-container<?php print esc_attr( $caweb_search ); ?> hidden-print" role="region" aria-label="Search Expanded">
 			<?php
 			if ( 'page-templates/searchpage.php' !== get_page_template_slug( get_the_ID() ) ) {
-				require_once( 'content/search-form.php' );
+				require_once 'content/search-form.php';
 			}
 			?>
 		</div>

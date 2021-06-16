@@ -43,18 +43,18 @@ function caweb_tiny_mce_settings( $settings = array() ) {
 		'media_buttons' => false,
 		'quicktags'     => true,
 		'tinymce'       => array(
-			'content_css'     => implode( ',', $css ),
-			'skin'            => 'lightgray',
-			'elementpath'     => true,
-			'entity_encoding' => 'raw',
-			'entities'        => '38, amp, 60, lt, 62, gt, 34, quot, 39, apos',
-			'plugins'         => 'charmap,colorpicker,hr,lists,paste,tabfocus,textcolor,wordpress,wpautoresize,wpemoji,wpgallery,wplink,wptextpattern',
-			'toolbar1'        => 'formatselect,bold,italic,underline,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright,link,wp_more,wp_adv',
-			'toolbar2'        => 'styleselect,strikethrough,hr,fontselect,fontsizeselect,forecolor,backcolor,pastetext,copy,subscript,superscript,charmap,outdent,indent,undo,redo,wp_help',
-			'style_formats'   => $styles,
+			'content_css'       => implode( ',', $css ),
+			'skin'              => 'lightgray',
+			'elementpath'       => true,
+			'entity_encoding'   => 'raw',
+			'entities'          => '38, amp, 60, lt, 62, gt, 34, quot, 39, apos',
+			'plugins'           => 'charmap,colorpicker,hr,lists,paste,tabfocus,textcolor,wordpress,wpautoresize,wpemoji,wpgallery,wplink,wptextpattern',
+			'toolbar1'          => 'formatselect,bold,italic,underline,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright,link,wp_more,wp_adv',
+			'toolbar2'          => 'styleselect,strikethrough,hr,fontselect,fontsizeselect,forecolor,backcolor,pastetext,copy,subscript,superscript,charmap,outdent,indent,undo,redo,wp_help',
+			'style_formats'     => $styles,
 			'forced_root_block' => '',
 			'force_br_newlines' => true,
-			'force_p_newlines' => false,
+			'force_p_newlines'  => false,
 		),
 	);
 
@@ -118,7 +118,7 @@ function caweb_tiny_mce_before_init( $init_array ) {
 	);
 
 	/* Insert the array, JSON ENCODED, into 'style_formats' */
-	$init_array['style_formats'] = json_encode( $style_formats );
+	$init_array['style_formats'] = wp_json_encode( $style_formats );
 
 	/* TinyMCE default is 11pt but it doesnt appear in the font size box */
 	$font_sizes                     = caweb_font_sizes( array(), true );

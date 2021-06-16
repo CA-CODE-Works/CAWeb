@@ -11,6 +11,9 @@ add_filter( 'post_class', 'caweb_post_class', 15 );
 add_filter( 'theme_page_templates', 'caweb_theme_page_templates', 15 );
 add_filter( 'script_loader_tag', 'caweb_script_loader_tag', 10, 3 );
 add_filter( 'map_meta_cap', 'caweb_add_unfiltered_html_capability', 1, 3 );
+/*disable XML-RPC*/
+add_filter( 'xmlrpc_enabled', '_return_false' );
+
 
 /* Plugin Filters */
 add_filter( 'wpforms_manage_cap', 'caweb_wpforms_custom_capability' );
@@ -41,7 +44,7 @@ function caweb_body_class( $wp_classes, $extra_classes ) {
 
 	/* List of extra classes that need to be added to the body */
 	if ( isset( $post->ID ) ) {
-		$divi              = et_pb_is_pagebuilder_used( $post->ID ) || strpos( $post->post_content, 'et_pb_section' ) || strpos( $post->post_content, 'et_pb_fullwidth_section' );
+		$divi              = function_exists( 'et_pb_is_pagebuilder_used' ) && et_pb_is_pagebuilder_used( $post->ID ) || strpos( $post->post_content, 'et_pb_section' ) || strpos( $post->post_content, 'et_pb_fullwidth_section' );
 		$sidebar_enabled   = ! is_page();
 		$special_templates = is_tag() || is_archive() || is_category() || is_author();
 

@@ -9,6 +9,7 @@
 add_shortcode( 'caweb_google_translate', 'caweb_google_translate_func' );
 add_shortcode( 'caweb_icon_menu', 'caweb_icon_menu' );
 
+//phpcs:disable
 /*
 The following shortcodes are not yet ready
 add_shortcode('caweb_panel', 'caweb_panel_func');
@@ -16,6 +17,7 @@ add_shortcode('caweb_section', 'caweb_section_func');
 add_shortcode('caweb_carousel', 'caweb_carousel_func');
 add_shortcode('caweb_slide_item', 'caweb_slide_func');
 */
+//phpcs:enable
 
 /**
  * Renders CAWeb Google Translator
@@ -35,11 +37,11 @@ function caweb_google_translate_func() {
  */
 function caweb_icon_menu( $atts ) {
 	/* Available Props */
-	$selected = isset( $atts['select'] ) ? $atts['select'] : '';
-	$input    = isset( $atts['name'] ) ? $atts['name'] : '';
+	$selected     = isset( $atts['select'] ) ? $atts['select'] : '';
+	$input        = isset( $atts['name'] ) ? $atts['name'] : '';
 	$header_class = isset( $atts['header_class'] ) ? is_array( $atts['header_class'] ) ? implode( ' ', $atts['header_class'] ) : $atts['header_class'] : '';
 	$header_class = ! empty( $header_class ) ? " class=\"$header_class\"" : '';
-	$label    = isset( $atts['header'] ) && $atts['header'] ? sprintf( ' <label%1$s%2$s>%3$s</label>', ! empty( $input ) ? " for=\"$input\"" : '', $header_class, $atts['header'] ) : '';
+	$label        = isset( $atts['header'] ) && $atts['header'] ? sprintf( ' <label%1$s%2$s>%3$s</label>', ! empty( $input ) ? " for=\"$input\"" : '', $header_class, $atts['header'] ) : '';
 
 	$header = sprintf( '<div class="caweb-icon-menu-header my-2"><span class="dashicons dashicons-image-rotate align-middle mb-1 resetIcon"></span>%1$s</div>', $label );
 	$input  = ! empty( $input ) ? sprintf( '<input type="hidden" id="%1$s" name="%1$s" value="%2$s" >', $input, $selected ) : '';

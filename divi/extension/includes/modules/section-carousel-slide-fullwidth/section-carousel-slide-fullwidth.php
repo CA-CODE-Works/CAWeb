@@ -2,7 +2,7 @@
 /**
  * CAWeb Section Carousel Slide Module (Fullwidth)
  *
- * @package CAWeb Module Extension
+ * @package CAWebModuleExtension
  */
 
 if ( ! class_exists( 'ET_Builder_CAWeb_Module' ) ) {
@@ -125,7 +125,7 @@ class CAWeb_Module_Fullwidth_Section_Carousel_Slide extends ET_Builder_CAWeb_Mod
 				'label'             => esc_html__( 'Slide Title Size', 'et_builder' ),
 				'type'              => 'select',
 				'option_category'   => 'configuration',
-				'options'           => $this->caweb_get_text_sizes( array( 'p', 'h6') ),
+				'options'           => $this->caweb_get_text_sizes( array( 'p', 'h6' ) ),
 				'default'           => 'h2',
 				'description'       => esc_html__( 'Here you can choose the heading size for the slide title.', 'et_builder' ),
 				'tab_slug'          => 'advanced',
@@ -172,7 +172,7 @@ class CAWeb_Module_Fullwidth_Section_Carousel_Slide extends ET_Builder_CAWeb_Mod
 	public function render( $unprocessed_props, $content = null, $render_slug ) {
 		$slide_image            = $this->props['slide_image'];
 		$slide_title            = $this->props['slide_title'];
-		$slide_title_size            = $this->props['slide_title_size'];
+		$slide_title_size       = $this->props['slide_title_size'];
 		$slide_desc             = $this->props['slide_desc'];
 		$slide_url              = $this->props['slide_url'];
 		$slide_alt_text         = $this->props['slide_alt_text'];
@@ -188,10 +188,11 @@ class CAWeb_Module_Fullwidth_Section_Carousel_Slide extends ET_Builder_CAWeb_Mod
 		$slide_image_alt = sprintf( ' alt="%1$s" ', empty( $slide_alt_text ) ? caweb_get_attachment_post_meta( $slide_image, '_wp_attachment_image_alt' ) : $slide_alt_text );
 
 		if ( 'media' === $et_pb_ca_section_carousel_style ) {
-			$class = sprintf( ' class="%1$s" ', $this->module_classname( $render_slug ) );
+			$class       = sprintf( ' class="%1$s" ', $this->module_classname( $render_slug ) );
+			$slide_title = ! empty( $slide_title ) ? $slide_title : $this->name;
 
 			$button = 'on' === $slide_show_more_button && ! empty( $slide_url ) ? sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( $slide_url ), $slide_title ) : '';
-			$button = ! empty( $button ) ? sprintf( '<div class="details text-center%1$s">%2$s</div>', empty($slide_desc) ? ' mt-3' : '', $button ) : '';
+			$button = ! empty( $button ) ? sprintf( '<div class="details text-center%1$s">%2$s</div>', empty( $slide_desc ) ? ' mt-3' : '', $button ) : '';
 
 			$desc = ! empty( $slide_desc ) ? sprintf( '<div class="details mt-3">%1$s</div>', $slide_desc ) : '';
 

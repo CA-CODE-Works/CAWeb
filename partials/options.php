@@ -200,6 +200,8 @@ function caweb_display_general_options() {
 				<label for="ca_default_navigation_menu" class="d-block mb-0"><strong>Header Menu Type</strong></label>
 				<small class="mb-2 text-muted d-block">Set a menu style for all pages.</small>
 				<select id="ca_default_navigation_menu" name="ca_default_navigation_menu" class="w-50 form-control">
+					<option value="flexmega"
+					<?php print 'flexmega' === $navigation_menu ? 'selected="selected"' : ''; ?>>Flex Mega Menu</option>
 					<option value="megadropdown"
 					<?php print 'megadropdown' === $navigation_menu ? 'selected="selected"' : ''; ?>>Mega Drop</option>
 					<option value="dropdown"
@@ -461,7 +463,7 @@ function caweb_display_google_options() {
 	$google_analytic_id = get_option( 'ca_google_analytic_id', '' );
 
 	// Tag Manager ID
-	$google_tag_manager_id = get_option( 'ca_google_tag_manager_id', '');
+	$google_tag_manager_id = get_option( 'ca_google_tag_manager_id', '' );
 
 	// Meta ID.
 	$google_meta_id = get_option( 'ca_google_meta_id', '' );
@@ -887,10 +889,10 @@ function caweb_display_alert_banner_settings( $is_active = false ) {
  * @return void
  */
 function caweb_display_additional_features_settings( $is_active = false ) {
-	$directory = wp_upload_dir();
-	$file      = $directory['basedir'] . '/pdf-word-sitemap.xml';
-	$file_url  = file_exists( $file ) ? sprintf( 'File location: <a href="%1$s%2$s" target="_blank">Document Map</a>', $directory['baseurl'], '/pdf-word-sitemap.xml' ) : '';
-	$cap = is_multisite() ? 'manage_network_options' : 'manage_options';
+	$directory           = wp_upload_dir();
+	$file                = $directory['basedir'] . '/pdf-word-sitemap.xml';
+	$file_url            = file_exists( $file ) ? sprintf( 'File location: <a href="%1$s%2$s" target="_blank">Document Map</a>', $directory['baseurl'], '/pdf-word-sitemap.xml' ) : '';
+	$cap                 = is_multisite() ? 'manage_network_options' : 'manage_options';
 	$live_drafts_enabled = get_option( 'caweb_live_drafts', false ) ? ' checked' : '';
 
 	?>
@@ -902,7 +904,7 @@ function caweb_display_additional_features_settings( $is_active = false ) {
 				<small class="doc-sitemap-update text-muted"><?php print esc_url( $file_url ); ?></small>
 			</div>
 		</div>
-		<?php if( current_user_can( $cap ) ): ?>
+		<?php if ( current_user_can( $cap ) ) : ?>
 		<div class="form-row">
 			<div class="form-group col-sm-12">
 				<label for="caweb_live_drafts"><strong>Enable Live Drafts</strong></label>

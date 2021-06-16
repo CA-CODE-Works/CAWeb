@@ -10,5 +10,5 @@ _notes/*
 composer.lock
 package-lock.json
 /log/
-/docs/
+/.docs/
 /.phpdoc/

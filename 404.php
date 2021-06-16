@@ -1,18 +1,13 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
+ * The template for displaying 404 pages (Page Not Found)
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
  * @package CAWeb
  */
 
-?>
-
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<?php
-	get_header();
+get_header();
 ?>
 
 <body <?php body_class( 'primary' ); ?>>
@@ -28,30 +23,12 @@
 						<!-- Page Title-->
 						<h1>Page Not Found</h1>
 						<div class="description">The page you requested was not found.</div>
-						<div class="section section-none">
-							<div class="agency-form">
-								<h1>Search Site For:</h1>
-								<gcse:searchbox-only resultsUrl="<?php print esc_url( site_url( 'serp' ) ); ?>"></gcse:searchbox-only>
-							</div>
-						</div>
-
 					</div>
 				</article> <!-- .et_pb_post -->
 
 			</main>
 		</div>
 	</div> <!-- #main-content -->
-
-	<style>
-		.entry-content tr td {
-			padding: 0px !important;
-			border: unset !important;
-		}
-
-		.gsc-input {
-			border: 1px solid #DDD !important;
-		}
-	</style>
 
 	<?php get_footer(); ?>
 </body>

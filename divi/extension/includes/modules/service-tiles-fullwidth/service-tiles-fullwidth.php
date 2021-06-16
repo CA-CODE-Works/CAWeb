@@ -2,7 +2,7 @@
 /**
  * CAWeb Service Tiles Module (Fullwidth)
  *
- * @package CAWeb Module Extension
+ * @package CAWebModuleExtension
  */
 
 if ( ! class_exists( 'ET_Builder_CAWeb_Module' ) ) {
@@ -65,7 +65,7 @@ class CAWeb_Module_Fullwidth_Service_Tiles extends ET_Builder_CAWeb_Module {
 	public function before_render() {
 		global $caweb_tile_count, $caweb_tiles;
 
-		$caweb_tiles       = array();
+		$caweb_tiles = array();
 		$titles      = array();
 		$tile_images = array();
 		$tile_sizes  = array();
@@ -144,9 +144,9 @@ class CAWeb_Module_Fullwidth_Service_Tiles extends ET_Builder_CAWeb_Module {
 			$tile_size  = $caweb_tiles[ $i ]['tile_size'];
 			$item_image = $caweb_tiles[ $i ]['item_image'];
 
-			if( 'half' === $tile_size ){
+			if ( 'half' === $tile_size ) {
 				$tile_size = 'w-50';
-			}elseif( 'full' === $tile_size ){
+			} elseif ( 'full' === $tile_size ) {
 				$tile_size = 'w-100';
 			}
 

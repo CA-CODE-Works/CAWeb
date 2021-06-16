@@ -41,7 +41,7 @@ $caweb_google_trans_icon            = get_option( 'ca_google_trans_icon', '' );
 						$caweb_share  = substr( $caweb_opt, 10 );
 						$caweb_share  = str_replace( '_', '-', $caweb_share );
 						$caweb_class  = "utility-social-$caweb_share ca-gov-icon-$caweb_share";
-						$caweb_title  = get_option( "${caweb_opt}_hover_text", 'Share via ' . ucwords( $caweb_share ) ) ;
+						$caweb_title  = get_option( "${caweb_opt}_hover_text", 'Share via ' . ucwords( $caweb_share ) );
 						$caweb_href   = $caweb_share_email ? $caweb_mailto : get_option( $caweb_opt );
 						$caweb_target = get_option( "${caweb_opt}_new_window" ) ? 'target="_blank"' : ''
 						?>
@@ -55,15 +55,16 @@ $caweb_google_trans_icon            = get_option( 'ca_google_trans_icon', '' );
 				?>
 			</div>
 			<div class="settings-links">
+				
 				<?php
 				for ( $caweb_i = 1; $caweb_i < 4; $caweb_i++ ) {
-					$caweb_url    = get_option( "ca_utility_link_$caweb_i" );
-					$caweb_text   = get_option( "ca_utility_link_${caweb_i}_name" );
-					$caweb_target = get_option( "ca_utility_link_${caweb_i}_new_window" ) ? ' target="_blank"' : '';
+					$caweb_url     = get_option( "ca_utility_link_$caweb_i" );
+					$caweb_text    = get_option( "ca_utility_link_${caweb_i}_name" );
+					$caweb_target  = get_option( "ca_utility_link_${caweb_i}_new_window" ) ? ' target="_blank"' : '';
 					$caweb_enabled = get_option( "ca_utility_link_${caweb_i}_enable", 'init' );
-					if( ('init' === $caweb_enabled && ! empty($url)  &&  ! empty($name) ) || $caweb_enabled ){
+					if ( ( 'init' === $caweb_enabled && ! empty( $url ) && ! empty( $name ) ) || $caweb_enabled ) {
 						$caweb_enabled = ' checked';
-					} else{
+					} else {
 						$caweb_enabled = '';
 					}
 
@@ -84,12 +85,12 @@ $caweb_google_trans_icon            = get_option( 'ca_google_trans_icon', '' );
 
 				<?php if ( 'custom' === $caweb_google_trans_enabled && ! empty( $caweb_google_trans_page ) ) : ?>
 				<a id="caweb-gtrans-custom" target="<?php print esc_attr( $caweb_google_trans_page_new_window ); ?>" href="<?php print esc_url( $caweb_google_trans_page ); ?>">
-				<?php if ( ! empty( $caweb_google_trans_icon ) ) : ?>
+					<?php if ( ! empty( $caweb_google_trans_icon ) ) : ?>
 				<span class="ca-gov-icon-<?php print esc_attr( $caweb_google_trans_icon ); ?>"></span>
 				<?php endif; ?>
-				Translate</a>
+				</a>
 				<?php endif; ?>
-				<?php if ( true === $caweb_google_trans_enabled || 'standard' === $caweb_google_trans_enabled  ) : ?>
+				<?php if ( true === $caweb_google_trans_enabled || 'standard' === $caweb_google_trans_enabled ) : ?>
 				<div class="quarter standard-translate" id="google_translate_element"></div>
 				<?php endif; ?>
 				<button class="btn btn-xs btn-primary collapsed" data-toggle="collapse" data-target="#siteSettings" aria-controls="siteSettings">

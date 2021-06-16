@@ -1,4 +1,4 @@
-<?php require_once( 'header.php' ); ?>
+<?php require_once 'header.php'; ?>
 
 	<div id="page-container">
 		<div id="et-main-area">
@@ -33,7 +33,7 @@
 
 						print '</div>';
 
-						if ( ! $caweb_is_page_builder_used && comments_open() && 'on' === et_get_option( 'divi_show_pagescomments', 'false' ) ) {
+						if ( ! $caweb_is_page_builder_used && comments_open() && function_exists( 'et_get_option' ) && 'on' === et_get_option( 'divi_show_pagescomments', 'false' ) ) {
 							comments_template( '', true );
 						}
 
