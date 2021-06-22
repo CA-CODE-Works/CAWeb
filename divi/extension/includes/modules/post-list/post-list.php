@@ -387,7 +387,7 @@ class CAWeb_Module_Post_List extends ET_Builder_CAWeb_Module {
 	 * @return string
 	 */
 	public function createListView( $list_style, &$post_count, $p_handler, $p_id, $p_url, $p_title, $featured_image = 'off', $faq_style = '' ) {
-		$layout = $p_handler->post_type_layout;
+		$layout = isset( $p_handler->post_type_layout ) ? $p_handler->post_type_layout : 'general';
 
 		// List Style.
 		switch ( $list_style ) {
