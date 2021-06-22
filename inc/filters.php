@@ -12,7 +12,7 @@ add_filter( 'theme_page_templates', 'caweb_theme_page_templates', 15 );
 add_filter( 'script_loader_tag', 'caweb_script_loader_tag', 10, 3 );
 add_filter( 'map_meta_cap', 'caweb_add_unfiltered_html_capability', 1, 3 );
 /*disable XML-RPC*/
-add_filter( 'xmlrpc_enabled', '_return_false' );
+add_filter( 'xmlrpc_enabled', 'caweb_xmlrpc_enabled' );
 
 
 /* Plugin Filters */
@@ -150,3 +150,11 @@ function caweb_wpforms_custom_capability( $cap ) {
 	return is_multisite() ? 'edit_posts' : 'unfiltered_html';
 }
 
+/**
+ * CAWeb Disable XMLRPC
+ *
+ * @return boolean
+ */
+function caweb_xmlrpc_enabled() {
+	return false;
+}
